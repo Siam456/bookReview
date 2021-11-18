@@ -1,0 +1,27 @@
+input[type='radio']{
+    display: none;
+}
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+}
+.fullreview{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 20px;
+}
+.likeComment{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper{
+    width: 50%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        width: 100%;
+        margin: auto;
+    }
+    
+  }
