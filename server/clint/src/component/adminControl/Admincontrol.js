@@ -36,7 +36,7 @@ const [ userEdit, setuserEdit ] = useState({
   };
   useEffect(() => {
     getUser();
-  }, ["/user"]);
+  }, []);
 
   //store post data
 

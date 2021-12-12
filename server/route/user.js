@@ -27,7 +27,7 @@ const checkAdmin = (req, res, next) => {
         })
     }
 }
-route.get('/', checklogin, checkAdmin, getUser);
+route.get('/', checklogin,  getUser);
 route.post('/', upload.single('avater'), convertBody, validation, checkValidation, postUser);
 route.put('/:id', checklogin, upload.single('avater'), convertBody, validationEdit, checkValidationEdit, checkAdmin, editUser);
 route.delete('/:id', checklogin, checkAdmin, deleteUser);

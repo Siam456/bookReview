@@ -8,6 +8,12 @@ import Bookpost from '../Bookpost/Bookpost';
 import Bookreview from '../review/Bookreview';
 import Bookreviewall from '../review/Bookreviewall';
 import Reward from '../reward/Reward';
+import Allbooks from '../Allbooks/Allbooks';
+import Catagory from '../catagory/Catagory';
+import Story from '../catagory/Story';
+import Sports from '../catagory/Sports';
+import Ffriction from '../catagory/Ffriction';
+import Novel from '../catagory/Novel';
 
 
 const Nav = () => {
@@ -34,7 +40,7 @@ const Nav = () => {
         return(() => {
             unmount = false;
         })
-    }, ['/userprofile']);
+    }, []);
 
 
     const logOut = async () => {
@@ -50,12 +56,33 @@ const Nav = () => {
 		
 	};
 
+    var navmnue;
+    if(user.role === 'admin'){
+        navmnue = (
+          <span style={{display: 'flex'}}>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/admin">
+                admin
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/postbook">
+                postBook
+              </NavLink>
+            </li>
+          </span>
+        );
+    }
+    else{
+        navmnue = ''
+    }
+
     
     return (
-        <>
+        <div className='container'> 
             <Router>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">Navbar</a>
+                    <a className="navbar-brand" href="/">Book <span className='text-success'>Review.</span></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -65,15 +92,14 @@ const Nav = () => {
                             <li className="nav-item active">
                                 <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
                             </li>
+                            {navmnue}
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/admin">admin</NavLink>
+                                <NavLink className="nav-link" to="/books">Books</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/postbook">postBook</NavLink>
+                                <NavLink className="nav-link" to="/cat">Catagory</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/review">Review</NavLink>
-                            </li>
+                            
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/reward">Reward</NavLink>
                             </li>
@@ -95,13 +121,19 @@ const Nav = () => {
                     <Route exact path='/'><Home name={user} /> </Route>
                     <Route exact path='/login'><Login /> </Route>
                     <Route exact path='/admin'><Admincontrol /> </Route>
+                    <Route exact path='/books'><Allbooks /> </Route>
                     <Route exact path='/postbook'><Bookpost /> </Route>
                     <Route exact path='/reward'><Reward /> </Route>
                     <Route exact path='/review/:id/:title'><Bookreview user={user} /> </Route>
                     <Route exact path='/review'><Bookreviewall user={user} /> </Route>
+                    <Route exact path='/cat' ><Catagory /></Route>
+                    <Route exact path='/cat/story' ><Story /></Route>
+                    <Route exact path='/cat/novel' ><Novel /></Route>
+                    <Route exact path='/cat/friction' ><Ffriction /></Route>
+                    <Route exact path='/cat/sports' ><Sports /></Route>
                 </Switch>
             </Router>
-        </>
+        </div>
     );
 };
 

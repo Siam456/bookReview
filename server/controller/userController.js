@@ -4,7 +4,7 @@ const people = require('../model/userModel');
 
 const getUser = async (req, res) => {
     try{
-        const response = await people.find({}, {password: 0})
+        const response = await people.find({}, {password: 0}).sort({review: "desc"})
         res.json({
             response,
         })

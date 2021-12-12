@@ -1,0 +1,43 @@
+.suBNav{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.subUl{
+    background: #38434F;
+    border-radius: 10px;
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+}
+.subLi{
+    color: #ACB6C3;
+    padding: 15px 35px;
+    cursor: pointer;
+    
+}
+.activeX{
+    background: #2C373E;
+    border-radius: 10px;
+    color: white;
+}
+.hide{
+    display: none;
+}
+.mainReward{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .suBNav {
+      width: 100%;
+    }
+    .mainReward{
+        width: 100%;
+    }
+  }
