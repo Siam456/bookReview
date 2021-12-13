@@ -1,0 +1,32 @@
+.swiper {
+    width: 270px;
+    height: 360px;
+  }
+  
+  .swiper-slide {
+    position: relative;
+    border-radius: 18px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .swiper-slide div{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+
+
+  }
+  .swiper-slide:hover div{
+    opacity: 1;
+    position: absolute;
+    top: 80%;
+
+   
+  }
+  

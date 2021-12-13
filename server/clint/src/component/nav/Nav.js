@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import Login from '../login/Login';
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom';
-import Home from '../home/Home';
+import Home from '../HomePage/Home';
 import Admincontrol from '../adminControl/Admincontrol';
 import Bookpost from '../Bookpost/Bookpost';
 import Bookreview from '../review/Bookreview';

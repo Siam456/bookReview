@@ -1,0 +1,19 @@
+.covidAlertGif{
+    height: 450px;
+    width: 100%;
+}
+
+.covidAlertGif img{
+    width: 90%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.covidAlertText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.covidAlertText p{
+    text-align: justify;
+}

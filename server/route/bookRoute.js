@@ -27,7 +27,7 @@ const checkAdmin = (req, res, next) => {
     }
 }
 
-route.get('/', checklogin, getBook);
+route.get('/', getBook);
 
 route.post('/', checklogin, checkAdmin, upload.single('avater'), convertBody, bookValidator, checkBookValidator,  postBook);
 route.delete('/:id', checklogin, deleteBook);
